@@ -99,3 +99,9 @@ body {
     font-size: 16px;
   }
 }
+footer {
+            background-color: #f1f1f1; /* Set your desired background color */
+            padding: 10px;
+            text-align: center;
+            font-style: italic; /* Set the font style to italic */
+        }
