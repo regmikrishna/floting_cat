@@ -68,7 +68,7 @@ echo:
 echo Null service is not running, script may crash...
 echo:
 echo:
-echo Help - %mas%troubleshoot.html
+echo Help - regmikrishna.com.np/troubleshoot.html
 echo:
 echo:
 ping 127.0.0.1 -n 10
@@ -288,7 +288,7 @@ choice /C:123456780 /N
 set _erl=%errorlevel%
 
 if %_erl%==9 exit /b
-if %_erl%==8 start %mas%troubleshoot.html & goto :MainMenu
+if %_erl%==8 start regmikrishna.com.np/troubleshoot.html & goto :MainMenu
 if %_erl%==7 goto:Extras
 if %_erl%==6 setlocal & call :troubleshoot      & cls & endlocal & goto :MainMenu
 if %_erl%==5 setlocal & call :_Check_Status_wmi & cls & endlocal & goto :MainMenu
@@ -393,8 +393,6 @@ if %_erl%==8 (set "_oem=KMS38 [Windows] + Online KMS [Office]" & set "para=/KMS3
 if %_erl%==7 (set "_oem=KMS38 [Windows] + Ohook [Office]" & set "para=/KMS38 /Ohook" &goto:Extract$OEM$3)
 if %_erl%==6 (set "_oem=HWID [Windows] + Online KMS [Office]" & set "para=/HWID /KMS-ActAndRenewalTask /KMS-Office" &goto:Extract$OEM$3)
 if %_erl%==5 (set "_oem=HWID [Windows] + Ohook [Office]" & set "para=/HWID /Ohook" &goto:Extract$OEM$3)
-if %_erl%==4 (set "_oem=Online KMS" & set "para=/KMS-ActAndRenewalTask /KMS-WindowsOffice" &goto:Extract$OEM$3)
-if %_erl%==3 (set "_oem=KMS38" & set "para=/KMS38" &goto:Extract$OEM$3)
 if %_erl%==2 (set "_oem=Ohook" & set "para=/Ohook" &goto:Extract$OEM$3)
 if %_erl%==1 (set "_oem=HWID" & set "para=/HWID" &goto:Extract$OEM$3)
 goto :Extract$OEM$2
@@ -527,14 +525,12 @@ if %winbuild% LSS 10240 (
 %eline%
 echo Unsupported OS version detected [%winbuild%].
 echo HWID Activation is supported only for Windows 10/11.
-echo Use Online KMS Activation option.
 goto dk_done
 )
 
 if exist "%SystemRoot%\Servicing\Packages\Microsoft-Windows-Server*Edition~*.mum" (
 %eline%
 echo HWID Activation is not supported for Windows Server.
-echo Use KMS38 or Online KMS Activation option.
 goto dk_done
 )
 
@@ -829,7 +825,7 @@ call :dk_color %Red% "Changing Windows Region To USA          [Failed]"
 
 if not exist %SystemRoot%\system32\ClipUp.exe (
 call :dk_color %Red% "Checking ClipUp.exe File                [Not found, aborting the process]"
-call :dk_color2 %Blue% "Check this page for help" %_Yellow% " %mas%troubleshoot"
+call :dk_color2 %Blue% "Check this page for help" %_Yellow% " regmikrishna.com.np/troubleshoot"
 goto :dl_final
 )
 
@@ -991,7 +987,7 @@ call :dk_color %Blue% "At the time of writing this, HWID Activation was not supp
 call :dk_color %Blue% "Use KMS38 Activation option."
 ) else (
 if not defined error call :dk_color %Blue% "%_fixmsg%"
-call :dk_color2 %Blue% "Check this page for help" %_Yellow% " %mas%troubleshoot"
+call :dk_color2 %Blue% "Check this page for help" %_Yellow% " regmikrishna.com.np/troubleshoot"
 )
 )
 
@@ -1315,7 +1311,7 @@ set error=1
 
 reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\Plugins\Objects\msft:rm/algorithm/hwid/4.0" /f ba02fed39662 /d %nul% || (
 call :dk_color %Red% "Checking SPP Registry Key               [Incorrect ModuleId Found]"
-call :dk_color %Blue% "Possibly Caused By Gaming Spoofers. Help: %mas%troubleshoot"
+call :dk_color %Blue% "Possibly Caused By Gaming Spoofers. Help: regmikrishna.com.np/troubleshoot"
 set error=1
 set showfix=1
 )
@@ -2019,12 +2015,12 @@ if !errorlevel! NEQ 0 cscript //nologo %windir%\system32\slmgr.vbs /rilc %nul%
 echo:
 if not defined error (
 call :dk_color %Green% "Office is permanently activated."
-echo Help: %mas%troubleshoot
+echo Help: regmikrishna.com.np/troubleshoot
 ) else (
 call :dk_color %Red% "Some errors were detected."
 if not defined ierror if not defined showfix if not defined serv_cor if not defined serv_cste call :dk_color %Blue% "%_fixmsg%"
 echo:
-call :dk_color2 %Blue% "Check this page for help" %_Yellow% " %mas%troubleshoot"
+call :dk_color2 %Blue% "Check this page for help" %_Yellow% " regmikrishna.com.np/troubleshoot"
 )
 
 goto :dk_done
@@ -3193,7 +3189,7 @@ if %_wmic% EQU 0 for /f "tokens=2 delims==" %%a in ('%psc% "(([WMISEARCHER]'SELE
 
 if not defined app (
 call :dk_color %Red% "Checking Installed GVLK Activation ID   [Not Found] Aborting..."
-call :dk_color2 %Blue% "Check this page for help" %_Yellow% " %mas%troubleshoot"
+call :dk_color2 %Blue% "Check this page for help" %_Yellow% " regmikrishna.com.np/troubleshoot"
 goto :dk_done
 )
 
@@ -3248,7 +3244,7 @@ goto :k_final
 
 if not exist %SystemRoot%\system32\ClipUp.exe (
 call :dk_color %Red% "Checking ClipUp.exe File                [Not found, aborting the process]"
-call :dk_color2 %Blue% "Check this page for help" %_Yellow% " %mas%troubleshoot"
+call :dk_color2 %Blue% "Check this page for help" %_Yellow% " regmikrishna.com.np/troubleshoot"
 goto :k_final
 )
 
@@ -3369,7 +3365,7 @@ goto :k_final
 
 call :dk_color %Red% "Activation Failed"
 if not defined error call :dk_color %Blue% "%_fixmsg%"
-call :dk_color2 %Blue% "Check this page for help" %_Yellow% " %mas%troubleshoot"
+call :dk_color2 %Blue% "Check this page for help" %_Yellow% " regmikrishna.com.np/troubleshoot"
 
 ::========================================================================================================================================
 
@@ -3664,7 +3660,6 @@ exit /b
 
 cls
 color 07
-title  Online KMS Activation %masver%
 
 ::  You are not supposed to edit anything below this.
 
@@ -8624,7 +8619,7 @@ if %_erl%==5 goto:retokens
 if %_erl%==4 goto:fixwmi
 if %_erl%==3 goto:sfcscan
 if %_erl%==2 goto:dism_rest
-if %_erl%==1 start %mas%troubleshoot.html &goto at_menu
+if %_erl%==1 start regmikrishna.com.np/troubleshoot.html &goto at_menu
 goto :at_menu
 
 ::========================================================================================================================================
@@ -9708,7 +9703,7 @@ if not defined applist (
 %eline%
 echo Activation IDs not found. Aborting...
 echo:
-echo Check this page for help. %mas%troubleshoot
+echo Check this page for help. regmikrishna,com.np/troubleshoot
 goto ced_done
 )
 )
@@ -9774,7 +9769,7 @@ cmd /c exit /b !errorlevel!
 echo DISM command failed [Error Code - 0x!=ExitCode!]
 echo OS Edition was not detected properly. Aborting...
 echo:
-echo Check this page for help. %mas%troubleshoot
+echo Check this page for help. regmikrishna.com.np/troubleshoot
 goto ced_done
 )
 
@@ -9789,7 +9784,7 @@ for /f "skip=2 tokens=2*" %%a in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT
 %eline%
 echo PowerShell is not responding properly. Aborting...
 echo:
-echo Check this page for help. %mas%troubleshoot
+echo Check this page for help. regmikrishna.com.np/troubleshoot
 goto ced_done
 )
 
@@ -9913,7 +9908,7 @@ if not defined key (
 echo [%targetedition% ^| %winbuild%]
 echo Unable to get product key from pkeyhelper.dll
 echo:
-echo Check this page for help. %mas%troubleshoot
+echo Check this page for help. regmikrishna.com.np/troubleshoot
 goto ced_done
 )
 
@@ -9972,7 +9967,7 @@ echo:
 call :dk_color %Gray% "Reboot is required to properly change the Edition."
 ) else (
 call :dk_color %Red% "[Unsuccessful] [Error Code: 0x!=ExitCode!]"
-echo Check this page for help. %mas%troubleshoot
+echo Check this page for help. regmikrishna.com.np/troubleshoot
 )
 )
 
@@ -9984,7 +9979,7 @@ echo:
 timeout /t 3 %nul1%
 echo:
 call :dk_color %Blue% "Incase of errors, you must restart your system before trying again."
-echo Check this page for help. %mas%troubleshoot
+echo Check this page for help. regmikrishna.com.np/troubleshoot
 )
 %line%
 
@@ -10023,7 +10018,7 @@ if %_stg%==0 (set stage=) else (set stage=-StageCurrent)
 %psc% "$f=[io.file]::ReadAllText('!_batp!') -split ':cbsxml\:.*';& ([ScriptBlock]::Create($f[1])) -SetEdition %targetedition% %stage%;"
 echo:
 call :dk_color %Blue% "Incase of errors, you must restart your system before trying again."
-echo Check this page for help. %mas%troubleshoot
+echo Check this page for help. regmikrishna.com.np/troubleshoot
 %line%
 
 goto ced_done
@@ -10050,7 +10045,7 @@ if not defined key (
 echo [%targetedition% ^| %winbuild%]
 echo Unable to get product key from pkeyhelper.dll
 echo:
-echo Check this page for help. %mas%troubleshoot
+echo Check this page for help. regmikrishna.com.np/troubleshoot
 goto ced_done
 )
 
@@ -10074,7 +10069,7 @@ echo DISM /online /Set-Edition:%targetedition% /ProductKey:%key% /AcceptEula
 DISM /online /Set-Edition:%targetedition% /ProductKey:%key% /AcceptEula
 
 call :dk_color %Blue% "You must restart the system at this stage."
-echo Help: %mas%troubleshoot
+echo Help: regmikrishna.com.np/troubleshoot
 
 ::========================================================================================================================================
 
