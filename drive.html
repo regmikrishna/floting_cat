@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneDrive</title>
+</head>
+<body>
+    <button onclick="authenticate()">Login With Microsoft</button>
+
+    <script>
+        function authenticate() {
+            const clientId = 'ID47000394-edd7-43b3-af2f-218ee99547c9';
+            const redirectUri = '1 web, 0 spa, 0 public client';
+            const scope = 'files.readwrite';
+
+            const authUrl = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=${scope}`;
+
+            window.location.href = authUrl;
+        }
+    </script>
+</body>
+</html>
